@@ -28,3 +28,10 @@ const divide = (a, b, callback) => {
         callback(null, result);
     }, 2000);
 };
+divide(20, 5, (error, quotient) => {
+    if (error) {
+        console.error('Error:', error.message);
+    } else {
+        console.log('Quotient:', quotient);
+    }
+});
