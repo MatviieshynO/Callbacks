@@ -34,3 +34,16 @@ console.log('Output the names of all persons', pesonNames);
 //Filter by age
 const ageFilter = persons.filter((person) => person.age > 18);
 console.log('Filter by age', ageFilter);
+
+// But synchronous callbacks are blocking, so we can make them asynchronous
+const games = [
+    { game: 'Football' },
+    { game: 'Basketball' },
+    { game: 'Volleyball' },
+];
+
+const timer = setInterval(() => {
+    const next = games.shift();
+    console.log(`Next game ${next.game}`);
+    if (games.length === 0) clearInterval(timer);
+}, 10);
