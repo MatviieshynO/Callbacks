@@ -1,5 +1,7 @@
 'use strict';
 
+const fs = require('node:fs'); // or es module => import fs from 'node:fs'
+
 // 1. Examples asynchronous methods: setInterval, setTimeout, fetch, readFile, writeFile, FileReader in browser.
 const numbers = [];
 
@@ -16,6 +18,15 @@ const outputNumbers = setTimeout(() => {
     console.log(numbers);
     clearTimeout(outputNumbers);
 }, 2000);
+
+// Use readFile
+fs.readFile(__filename, 'utf8', (error, data) => {
+    if (error) {
+        console.error('Error reading file:', error);
+    } else {
+        console.log({ lines: data.split('\n').length });
+    }
+});
 
 //2. Examples synchronous methods: forEach, map, filter, reduce, readFileSync, writeFileSync
 const persons = [
