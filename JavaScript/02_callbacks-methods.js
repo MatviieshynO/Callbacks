@@ -62,3 +62,10 @@ const timer = setInterval(() => {
     console.log(`Next game ${next.game}`);
     if (games.length === 0) clearInterval(timer);
 }, 10);
+
+// ReadFileSync becomes asynchronous method
+const timeOut = setTimeout(() => {
+    const data = fs.readFileSync(__filename, 'utf8');
+    console.log({ lines: data.split('\n').length });
+    clearTimeout(timeOut);
+}, 2000);
