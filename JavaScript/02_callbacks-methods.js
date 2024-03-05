@@ -46,6 +46,10 @@ console.log('Output the names of all persons', pesonNames);
 const ageFilter = persons.filter((person) => person.age > 18);
 console.log('Filter by age', ageFilter);
 
+// ReadFileSync example, this method is blocking
+const data = fs.readFileSync(__filename, 'utf8');
+console.log({ lines: data.split('\n').length });
+
 // But synchronous callbacks are blocking, so we can make them asynchronous
 const games = [
     { game: 'Football' },
