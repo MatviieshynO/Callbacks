@@ -50,7 +50,7 @@ console.log('Filter by age', ageFilter);
 const data = fs.readFileSync(__filename, 'utf8');
 console.log({ lines: data.split('\n').length });
 
-// But synchronous callbacks are blocking, so we can make them asynchronous
+// 3. But synchronous callbacks are blocking, so we can make them asynchronous
 const games = [
     { game: 'Football' },
     { game: 'Basketball' },
